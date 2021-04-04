@@ -12,14 +12,14 @@ class ChampionWikia:
             'AttackRange'
         ]
         self.base_stats = {
-            stat: "_".join([stat, self.champion_name])
+            "_".join([stat, self.champion_name]): 0.0
             for stat in base_stats
-        } 
+        }
 
         self.base_stats_lvl = {
-            stat: "_".join([stat, self.champion_name, 'lvl'])
+            "_".join([stat, self.champion_name, 'lvl']): 0.0
             for stat in base_stats
-        } 
+        }
 
     def get(self):
         response = requests.get(self.url)
