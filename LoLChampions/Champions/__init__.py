@@ -1,0 +1,1 @@
+from .ChampionWikia import ChampionWikia

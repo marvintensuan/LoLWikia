@@ -1,0 +1,10 @@
+# Python Environment
+Include
+Lib
+Scripts
+pyvenv.cfg
+
+# cache
+**/__pycache__
+**/.ipynb_checkpoints
+**/.pytest_cache
