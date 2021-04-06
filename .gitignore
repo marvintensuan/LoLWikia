@@ -8,3 +8,6 @@ pyvenv.cfg
 **/__pycache__
 **/.ipynb_checkpoints
 **/.pytest_cache
+
+# VSCode
+.vscode
