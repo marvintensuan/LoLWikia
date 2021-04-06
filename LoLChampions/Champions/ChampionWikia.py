@@ -1,4 +1,5 @@
 import requests
+from .ChampionAbility import ChampionAbility
 
 class ChampionWikia:
     def __init__(self, champion_name):
@@ -26,3 +27,16 @@ class ChampionWikia:
         self.status_code = response.status_code
         self.html = response.text
         return self.status_code
+
+    def stat_resource_cost_percentage(self, skill, level = 1):
+        '''
+        Returns the rate of an ability cost over the Champion's total resource.
+        '''
+        if not isinstance(level, int):
+            raise TypeError('Assigned level should be an int')
+        if isinstance(skill, ChampionAbility):
+            _resource_bar_id = 'ResourceBar' + '_' + self.champion_name
+            _resource_bar_lvl_id = _resource_bar_id + '_lvl'
+            _total_resource = self.base_stats[_resource_bar_id] \
+                + ((level - 1)* self.base_stats[_resource_bar_lvl_id])
+            return skill.ability_cost/_total_resource
